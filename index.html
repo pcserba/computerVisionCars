@@ -4,13 +4,14 @@
     <title>Analyze Sample</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	//tmp, load static dataset
-	<script src="data.js" ></script>
+	//<script src="data.js" ></script>
 </head></head>
 <body>
 
 <script type="text/javascript">
 
- function processImage() {
+<script type="text/javascript">
+    function processImage() {
         // **********************************************
         // *** Update or verify the following values. ***
         // **********************************************
@@ -19,23 +20,16 @@
         var endpoint = "https://testblabla.cognitiveservices.azure.com/";
         
         var uriBase = endpoint + "vision/v3.1/analyze";
-	//retrieve data from discomap
-		var discomap = "https://discodata.eea.europa.eu/sql?query=Select%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%2C%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20as%20avgEwltp%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%20%0AWHERE%20%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%20like%20%27" + data.brands[0].name +"%25%27%0AGROUP%20BY%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%0AHAVING%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20IS%20NOT%20NULL%0A&nrOfHits=100&?callback=?"
-		fetch(discomap)
-		.then(res => res.json())
-		.then(discomapResult =>
-		console.log(discomapResult.results))
 
-	 
         // Request parameters.
         var params = {
-            "visualFeatures": "Categories,Description,objects,brands",
+            "visualFeatures": "Categories,Description,Color",
             "details": "",
             "language": "en",
         };
 
         // Display the image.
-        var sourceImageUrl = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VPPB6JDxTrIKom_O8uowLgHaHa%26pid%3DApi&f=1";
+        var sourceImageUrl = document.getElementById("inputImage").value;
         document.querySelector("#sourceImage").src = sourceImageUrl;
 
         // Make the REST API call.
@@ -52,13 +46,17 @@
             type: "POST",
 
             // Request body.
-            //data: '{"url": ' + '"' + sourceImageUrl + '"}',
-			})
+            data: '{"url": ' + '"' + sourceImageUrl + '"}',
+        })
 
         .done(function(data) {
             // Show formatted JSON on webpage.
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
-			console.log(JSON.parse(data).brands.name);
+		var discomap = "https://discodata.eea.europa.eu/sql?query=Select%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%2C%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20as%20avgEwltp%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%20%0AWHERE%20%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%20like%20%27" + data.brands[0].name +"%25%27%0AGROUP%20BY%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%0AHAVING%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20IS%20NOT%20NULL%0A&nrOfHits=100&?callback=?"
+		fetch(discomap)
+		.then(res => res.json())
+		.then(discomapResult =>
+		console.log(discomapResult.results))
         })
 
         .fail(function(jqXHR, textStatus, errorThrown) {
@@ -70,7 +68,8 @@
             alert(errorString);
         });
     };
-</script>
+</script>	
+	
 
 <h1>Analyze image:</h1>
 Enter the URL to an image, then click the <strong>Analyze image</strong> button.
