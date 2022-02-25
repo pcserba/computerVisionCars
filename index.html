@@ -19,8 +19,9 @@
         var subscriptionKey = "b22d69d2311b43749c5161e036a3079c";
         var endpoint = "https://testblabla.cognitiveservices.azure.com/";
 		var discomap = "https://discodata.eea.europa.eu/sql?query=Select%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%2C%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20as%20avgEwltp%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%20%0AWHERE%20%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%20like%20%27" + data.brands[0].name +"%25%27%0AGROUP%20BY%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%0AHAVING%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20IS%20NOT%20NULL%0A&nrOfHits=100"
-		var result = $.getJSON(discomap, function(result){
-                    if (result.length == 0){
+		$.getJSON(discomap, function(result){
+                    console.log("blabla"+result)
+		    if (result.length == 0){
                     }
                     if (result.length){
 			console.log(result)
