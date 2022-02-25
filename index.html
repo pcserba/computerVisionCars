@@ -22,19 +22,9 @@
 
 fetch(discomap)
 .then(res => res.json())
-.then(out =>
-  console.log('Checkout this JSON! ', out))
-	 
-	 	console.log(obj)
-	 	//$.getJSON(discomap, function(result){
-                //    console.log(result.length)
-		//    if (result.length == 0){
-                //    }
-                //    if (result.length){
-		//	console.log(result)
-		//    }    
-                //});
-	  };
+.then(discomapResult =>
+  console.log(discomapResult.results))
+};
 </script>
 
 <div id="wrapper" style="width:1020px; display:table;">
