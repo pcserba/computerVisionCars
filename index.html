@@ -1,49 +1,41 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analyze Sample</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="data.js" ></script>
+	<script type = "text/javascript">  window.onload = function(){processImage()} </script>
 
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+</head></head>
+<body>
 
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-</style>
+<script type="text/javascript">
 
-<body style="margin : 0px; overflow: hidden;">
-  <!-- minimal loader shown until image descriptors are loaded -->
-  <div class="arjs-loader">
-    <div>original-textPlaneC</div>
-  </div>
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
-    <!-- we use cors proxy to avoid cross-origin problems -->
-    <a-nft
-      type="nft"
-      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-      <a-plane position="0 0 -300" rotation="-90 0 0" width="150" height="150" color="#FFFFFF" opacity="0.5"></a-plane>
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
+ function processImage() {
+        // **********************************************
+        // *** Update or verify the following values. ***
+        // **********************************************
+
+        var subscriptionKey = "b22d69d2311b43749c5161e036a3079c";
+        var endpoint = "https://testblabla.cognitiveservices.azure.com/";
+		var discomap = "https://discodata.eea.europa.eu/sql?query=Select%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%2C%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20as%20avgEwltp%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%20%0AWHERE%20%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%20like%20%27" + data.brands[0].name +"%25%27%0AGROUP%20BY%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BMh%5D%2C%20year%0AHAVING%20avg(cast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5Das%20int))%20IS%20NOT%20NULL%0A&nrOfHits=100"
+		var result = $.getJSON(discomap)
+		console.log(result)
+    };
+</script>
+
+<div id="wrapper" style="width:1020px; display:table;">
+    <div id="jsonOutput" style="width:600px; display:table-cell;">
+        Response:
+        <br><br>
+        <textarea id="responseTextArea" class="UIInput"
+                  style="width:580px; height:400px;"></textarea>
+    </div>
+    <div id="imageDiv" style="width:100px; display:table-cell;">
+        Source image:
+        <br><br>
+        <img id="sourceImage" width="100" />
+    </div>
+</div>
 </body>
+</html>
