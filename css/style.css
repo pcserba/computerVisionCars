@@ -1,0 +1,90 @@
+<style>
+HTML, body {
+margin: 0px;
+padding: 0px;
+border: 0px;
+background-color:#000000;
+color:#FFFFFF;
+}
+
+
+h1{
+   margin:0px;
+   padding:0px;
+background-color:#000000;
+}
+
+.imageContainer {
+   display: inline-block;
+   position: relative;
+   color: rgb(0, 0, 0);
+   max-width: 100%;
+   object-fit: contain;
+ }
+
+.caption{
+   font-size: 15px;
+   font-weight:normal;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.a, a:visited {
+color:#FFFFFF;
+}
+
+.BL {
+   position: absolute;
+   bottom: 0px;
+   left: 0px;
+   right: 0px;
+   text-align: left;
+   height: 50%;
+   width:100%;
+   color:#FFFFFF;
+   background-color: #000000;
+   opacity: 0;
+   transition:opacity 1s;
+}
+
+.BR {
+   font-weight:normal;
+   position: absolute;
+   bottom: 50%;
+   right: 5px;
+   text-align:right;
+   color:#FFFFFF;
+   opacity:0;
+   transition:opacity 1s;
+}
+.TL p {
+  font-weight: normal;
+  color: #FFFFFF;
+  font-size:15px;
+  line-height:50%;
+}
+
+.TL{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   text-align: left;
+   color:#FFFFFF;
+   height: 50%;
+   width:100%;
+   background-color: #000000;
+   opacity: 0;
+   transition:opacity 1s;
+}
+
+.TL.show { opacity: 0.8; } 
+.BR.show { opacity: 0.8; } 
+.BL.show { opacity: 0.8; } 
+
+.TR {
+   position: absolute;
+   top: 8px;
+   right: 16px;
+}
+
+</style>
