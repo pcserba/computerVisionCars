@@ -1,0 +1,94 @@
+//initial SQL
+SELECT 
+    mh
+    Cn_short
+    ,year
+    ,round(avg(EWLTP),3) as avgEWLTP
+    ,round(avg(Ec),3) as avgEc
+    ,round(avg(Ep),3) as avgEp
+    ,round(avg(M),2) as avgM
+    ,count(distinct ID) as countVIN
+    FROM 
+        (
+        Select Mh
+        ,'CLIO' as Cn_short
+        ,year
+        ,ID
+        ,cast([CO2Emission].[latest].[co2cars].[ec (cm3)] as numeric(10,0)) as Ec
+        ,cast([CO2Emission].[latest].[co2cars].[ep (KW)] as numeric(10,0)) as Ep
+        ,cast([CO2Emission].[latest].[co2cars].[Ewltp (g/km)] as numeric(10,0)) as EWLTP
+        ,cast([CO2Emission].[latest].[co2cars].[M (kg)] as numeric(10,0)) as M
+        from [CO2Emission].[latest].[co2cars]
+        WHERE Cn LIKE '%CLIO%'
+        AND Mh='RENAULT'
+        --AND status='P'
+        AND year=2020
+        ) as a
+GROUP BY Mh,CN_short,year
+
+
+//result by country
+SELECT 
+    Mh
+    ,MS
+    ,'CLIO' as Cn_short
+    ,year
+    ,count(distinct ID) as countVIN
+    FROM 
+        (
+        Select 
+        Mh
+        ,MS
+        ,year
+        ,ID
+       from [CO2Emission].[latest].[co2cars]
+        WHERE Cn LIKE '%CLIO%'
+        AND Mh='RENAULT'
+        --AND status='P'
+        AND year=2020
+        GROUP BY Mh,MS,year,ID) as a
+GROUP BY Mh,ms, year
+
+//result by Year
+SELECT 
+    Mh
+    ,'CLIO' as Cn_short
+    ,year
+    ,count(distinct ID) as countVIN
+    FROM 
+        (
+        Select 
+        Mh
+        ,MS
+        ,year
+        ,ID
+       from [CO2Emission].[latest].[co2cars]
+        WHERE Cn LIKE '%CLIO%'
+        AND Mh='RENAULT'
+        --AND status='P'
+        AND year>2016
+GROUP BY Mh,MS,year,ID) as a
+GROUP BY Mh,year
+
+//by manufacturer
+SELECT 
+    Mh
+    ,year
+    ,round(avg(EWLTP),3) as avgEWLTP
+    ,count(distinct ID) as countVIN
+    FROM 
+        (
+        Select 
+        Mh
+        ,Cn
+        ,year
+        ,ID
+       ,cast([CO2Emission].[latest].[co2cars].[Ewltp (g/km)] as numeric(10,0)) as EWLTP
+  from [CO2Emission].[latest].[co2cars]
+        WHERE Mh='BUGATTI'
+        --AND status='P'
+       AND year>=2017
+        GROUP BY Mh,Cn,year,ID, [Ewltp (g/km)]) as a
+GROUP BY Mh, year
+ORDER BY year
+

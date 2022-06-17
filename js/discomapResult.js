@@ -1,0 +1,1 @@
+var discomapResult={"results":[{"Mh":"BMW AG","year":2020,"avgEwltp":134},{"Mh":"BMW AG","year":2019,"avgEwltp":153},{"Mh":"BMW AG","year":2017,"avgEwltp":0},{"Mh":"BMW AG","year":2018,"avgEwltp":157},{"Mh":"BMW GMBH","year":2018,"avgEwltp":232},{"Mh":"BMW GMBH","year":2020,"avgEwltp":236},{"Mh":"BMW GMBH","year":2019,"avgEwltp":237}]}
