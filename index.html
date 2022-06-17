@@ -21,11 +21,11 @@ console.log(discomap1)
 
 fetch(discomap1)
 .then(res => res.json())
-.then(obj =>
-console.log(obj.results))
+.then(discomap1Result =>
+console.log(discomap1Result.results))
 
 
-const obj=JSON.parse(discomap1);
+const obj=JSON.parse(discomap1Result.results);
 //const byCountry=JSON.parse(resultByCountry);
 //const byYear=JSON.parse(resultByYear);
 //const byManufacturer=JSON.parse(resultByManufacturer);
