@@ -21,10 +21,9 @@ var discomap1="https://discodata.eea.europa.eu/sql?query=SELECT%20%0D%0A%20%20%2
 fetch(discomap1)
 .then(res => res.json())
 .then(discomap1Result =>console.log(discomap1Result.results)
-.then(obj=>discomap1Result.results)
 
 
-//const obj=discomap1Result.results;
+const obj=discomap1Result.results;
 //const byCountry=JSON.parse(resultByCountry);
 //const byYear=JSON.parse(resultByYear);
 //const byManufacturer=JSON.parse(resultByManufacturer);
