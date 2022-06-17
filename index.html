@@ -21,8 +21,7 @@ console.log(discomap1)
 
 fetch(discomap1)
 .then(res => res.json())
-.then(discomap1Result =>
-console.log(discomap1Result.results))
+.then(discomap1Result =>discomap1Result.results)
 
 
 const obj=discomap1Result.results;
