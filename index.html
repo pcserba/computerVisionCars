@@ -18,11 +18,6 @@ var discomap1="https://discodata.eea.europa.eu/sql?query=SELECT%20%0D%0A%20%20%2
 //Manufacturer fromCarnet[0].make_name;
 //model fromCarnet[0].model_name;
 
-//fetch(discomap1)
-//.then(res => res.json())
-//.then(discomap1Result =>console.log(discomap1Result.results));
-//console.log(res);
-
 fetch(discomap1).then(response => {
   return response.json();
 }).then(data => {
@@ -31,6 +26,8 @@ fetch(discomap1).then(response => {
 }).catch(err => {
   // Do something for an error here
 });
+
+console.log(discomap1Result.results[0]);
 
 //const byCountry=JSON.parse(resultByCountry);
 //const byYear=JSON.parse(resultByYear);
