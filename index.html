@@ -22,8 +22,7 @@ fetch(discomap1).then(response => {
   return response.json();
 }).then(data => {
   // Work with JSON data here
-console.log(data);
-console.log('We detected a <B>' + data.results[0].Mh + ' </B> <B>'+data.results[0].Cn_short+'</B> with <B>99%</B> confidence.<P><B>Registrations in Europe ('+data.results[0].year+'):</B> '+data.results[0].countVIN+' vehicles<P><B>Average specific CO<sub>2</sub> Emissions</B>: '+data.results[0].avgEWLTP+' g/km<P><B>Average engine capacity:</B> '+data.results[0].avgEc+'cm<sup>3</sup><P><B>Average engine power:</B> '+data.results[0].avgEp+'kwh<P><B>Average mass in running order:</B> '+data.results[0].avgM+'kg');
+console.log('We detected a <B>' + data.results[0].mh + ' </B> <B>'+data.results[0].Cn_short+'</B> with <B>99%</B> confidence.<P><B>Registrations in Europe ('+data.results[0].year+'):</B> '+data.results[0].countVIN+' vehicles<P><B>Average specific CO<sub>2</sub> Emissions</B>: '+data.results[0].avgEWLTP+' g/km<P><B>Average engine capacity:</B> '+data.results[0].avgEc+'cm<sup>3</sup><P><B>Average engine power:</B> '+data.results[0].avgEp+'kwh<P><B>Average mass in running order:</B> '+data.results[0].avgM+'kg');
 }).catch(err => {
   // Do something for an error here
 });
