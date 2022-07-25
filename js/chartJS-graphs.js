@@ -1,4 +1,4 @@
-function chartByCountry () {
+function chartByCountry (byCountry) {
 
 let chartStatus = Chart.getChart("myChart"); // <canvas> id
 if (chartStatus != undefined) {
@@ -61,7 +61,7 @@ const myChart1 = new Chart(ctx, {
 };
 
 
-function chartByYear () {
+function chartByYear (byYear) {
 
 let chartStatus = Chart.getChart("myChart"); // <canvas> id
 if (chartStatus != undefined) {
@@ -124,7 +124,7 @@ const myChart1 = new Chart(ctx, {
 }
 
 
-function chartByManufacturer () {
+function chartByManufacturer (byManufacturer) {
 
 let chartStatus = Chart.getChart("myChart"); // <canvas> id
 if (chartStatus != undefined) {
