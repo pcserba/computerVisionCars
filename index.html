@@ -27,7 +27,7 @@ var discomap4 = "https://discodata.eea.europa.eu/sql?query=%0D%0ASELECT%20%0D%0A
 //Manufacturer fromCarnet[0].make_name;
 //model fromCarnet[0].model_name;
 
-const fetchReq4 = fetch(discomap4).then(res=>response.json());
+const fetchReq4 = fetch(discomap4).then(res=>res.json());
 
 const allData = Promise.all([fetchReq4]);
 // attach then() handler to the allData Promise
