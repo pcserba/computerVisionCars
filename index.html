@@ -27,30 +27,14 @@ var discomap4 = "https://discodata.eea.europa.eu/sql?query=%0D%0ASELECT%20%0D%0A
 //Manufacturer fromCarnet[0].make_name;
 //model fromCarnet[0].model_name;
 
+const fetchReq1 = fetch(discomap1).then(res=>res.json());
+const fetchReq2 = fetch(discomap2).then(res=>res.json());
+const fetchReq3 = fetch(discomap3).then(res=>res.json());
 const fetchReq4 = fetch(discomap4).then(res=>res.json());
 
-const allData = Promise.all([fetchReq4]);
+const allData = Promise.all([fetchReq1,fetchReq2,fetchReq3,fetchReq4]);
 // attach then() handler to the allData Promise
 allData.then((res) => console.log(res));
-
-
-fetch(discomap3).then(response => {
-  return response.json();
-}).then(data => {
-// Work with JSON data here
-console.log(data)
-}).catch(err => {
-  // Do something for an error here
-});
-
-
-fetch(discomap2).then(response => {
-  return response.json();
-}).then(data => {
-// Work with JSON data here
-}).catch(err => {
-  // Do something for an error here
-});
 
 
 fetch(discomap1).then(response => {
