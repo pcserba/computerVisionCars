@@ -34,7 +34,8 @@ const fetchReq4 = fetch(discomap4).then(res=>res.json());
 
 const allData = Promise.all([fetchReq1,fetchReq2,fetchReq3,fetchReq4]);
 // attach then() handler to the allData Promise
-allData.then((res) => showData())
+allData.then((res) => {console.log(res);
+	showData()};)
 
 </script>
 
