@@ -9,10 +9,10 @@ document.getElementById('caption BR3').innerHTML='<a href=#>[Avg Ewltp for '+res
 
 document.getElementById('caption BR').addEventListener('click', function(){
    showYear(res[2].results);  });
-//document.getElementById('caption BR2').addEventListener('click', function(){
-//   showMS(res[1].results);  });
-//document.getElementById('caption BR3').addEventListener('click', function(){
-//   showManufacturer(res[3].results);  });
+document.getElementById('caption BR2').addEventListener('click', function(){
+   showMS(res[1].results);  });
+document.getElementById('caption BR3').addEventListener('click', function(){
+   showManufacturer(res[3].results);  });
 
 
 	//transition opacity
