@@ -22,6 +22,7 @@ function showMS(res) {
 }
 
 function showYear(res) {
+	console.log(res);
 	chartByYear(res);
 	//transition opacity
 	document.getElementById('caption BL').classList.toggle('show');
