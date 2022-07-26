@@ -7,6 +7,10 @@ background-color:#000000;
 color:#FFFFFF;
 }
 
+.a, a:visited {
+color:#FFFFFF;
+}
+
 
 h1{
    margin:0px;
@@ -26,10 +30,6 @@ background-color:#000000;
    font-size: 15px;
    font-weight:normal;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.a, a:visited {
-color:#FFFFFF;
 }
 
 .BL {
