@@ -62,7 +62,7 @@ const myChart1 = new Chart(ctx, {
 
 
 function chartByYear (byYear) {
-
+console.log(byYear);
 let chartStatus = Chart.getChart("myChart"); // <canvas> id
 if (chartStatus != undefined) {
   chartStatus.destroy();
