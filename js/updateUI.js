@@ -8,11 +8,12 @@ document.getElementById('caption BR2').innerHTML='<a href=#>[Registrations by co
 document.getElementById('caption BR2').innerHTML='<a href=#>[Registrations for '+res[0].results[0].mh+']</A></P></div>';
 
 document.getElementById('caption BR').addEventListener('click', function(){
-   showYear(res[2].results);  
+   showYear(res[2].results);  });
 document.getElementById('caption BR2').addEventListener('click', function(){
-   showMS(res[1].results);  
+   showMS(res[1].results);  });
 document.getElementById('caption BR3').addEventListener('click', function(){
-   showManufacturer(res[3].results);  
+   showManufacturer(res[3].results);  });
+
 
 	//transition opacity
 	document.getElementById('caption TL').classList.toggle('show');
