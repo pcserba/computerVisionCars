@@ -6,7 +6,7 @@ document.getElementById('caption TL').innerHTML=txt;
 document.getElementById('caption BR').innerHTML='<a href=#>[Registrations by year]</A></P></div>';
 
 document.getElementById('caption BR').addEventListener('click', function(){
-   showYear(res[2]);  
+   showYear(res[2].results);  
 });
 	//transition opacity
 	document.getElementById('caption TL').classList.toggle('show');
@@ -22,7 +22,6 @@ function showMS(res) {
 }
 
 function showYear(res) {
-	console.log(res);
 	chartByYear(res);
 	//transition opacity
 	document.getElementById('caption BL').classList.toggle('show');
