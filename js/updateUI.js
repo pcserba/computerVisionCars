@@ -17,7 +17,9 @@ document.getElementById('caption BR3').addEventListener('click', function(){
 
 	//transition opacity
 	document.getElementById('caption TL').classList.toggle('show');
-	//document.getElementById('caption BR').classList.toggle('show');
+	document.getElementById('caption BR').classList.toggle('show');
+	document.getElementById('caption B2').classList.toggle('show');
+	document.getElementById('caption B3').classList.toggle('show');
 	};
 
 
