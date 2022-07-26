@@ -5,7 +5,7 @@ function showData(res) {
 document.getElementById('caption TL').innerHTML=txt;
 document.getElementById('caption BR').innerHTML='<a href=#>[Registrations by year]</A></P>';
 document.getElementById('caption BR2').innerHTML='<a href=#>[Registrations by country]</A></P>';
-document.getElementById('caption BR3').innerHTML='<a href=#>[Avg Ewltp for '+res[0].results[0].mh+' by year]</A></P>';
+document.getElementById('caption BR3').innerHTML='<a href=#>[Avg Ewltp for '+res[0].results[0].mh+' by year]</A></P></div>';
 
 document.getElementById('caption BR').addEventListener('click', function(){
    showYear(res[2].results);  });
