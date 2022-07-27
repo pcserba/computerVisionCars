@@ -39,6 +39,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    right: 0px;
    text-align: left;
    height: 50%;
+   width: 100%;
    color:#FFFFFF;
    background-color: #000000;
    opacity: 0;
@@ -58,7 +59,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 .BR1 {
    position: absolute;
-   bottom:65%;
+   bottom:75%;
    font-weight:normal;
    right: 5px;
    text-align:right;
@@ -68,7 +69,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .BR2 {
    position: absolute;
-   bottom:60%;
+   bottom:65%;
    font-weight:normal;
    right: 5px;
    text-align:right;
