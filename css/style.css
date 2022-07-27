@@ -39,7 +39,6 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    right: 0px;
    text-align: left;
    height: 50%;
-   width:100%;
    color:#FFFFFF;
    background-color: #000000;
    opacity: 0;
@@ -48,8 +47,6 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 .BR {
    font-weight:normal;
-   position: absolute;
-   bottom: 50%;
    right: 5px;
    text-align:right;
    color:#FFFFFF;
