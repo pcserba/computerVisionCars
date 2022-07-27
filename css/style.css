@@ -48,6 +48,30 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 .BR {
    position: absolute;
    display:block;
+   bottom:70%;
+   font-weight:normal;
+   right: 5px;
+   text-align:right;
+   color:#FFFFFF;
+   opacity:0;
+   transition:opacity 1s;
+}
+
+.BR1 {
+   position: absolute;
+   display:block;
+   bottom:60%;
+   font-weight:normal;
+   right: 5px;
+   text-align:right;
+   color:#FFFFFF;
+   opacity:0;
+   transition:opacity 1s;
+}
+.BR2 {
+   position: absolute;
+   display:block;
+   bottom:50%;
    font-weight:normal;
    right: 5px;
    text-align:right;
