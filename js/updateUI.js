@@ -26,21 +26,21 @@ document.getElementById('BR2').addEventListener('click', function(){
 function showMS(res) {
 	chartByCountry(res);
 	//transition opacity
-	document.getElementById('caption BL').classList.toggle('show');
+	document.getElementById('caption BL').classList.add('show');
 
 }
 
 function showYear(res) {
 	chartByYear(res);
 	//transition opacity
-	document.getElementById('caption BL').classList.toggle('show');
+	document.getElementById('caption BL').classList.add('show');
 
 }
 
 function showManufacturer(res) {
 	chartByManufacturer(res);
 	//transition opacity
-	document.getElementById('caption BL').classList.toggle('show');
+	document.getElementById('caption BL').classList.add('show');
 
 }
 
