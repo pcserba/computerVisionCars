@@ -7,7 +7,7 @@ background-color:#000000;
 color:#FFFFFF;
 }
 
-.a, a:visited {
+.a, a:visited, a:link {
 color:#FFFFFF;
 }
 
