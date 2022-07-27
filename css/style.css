@@ -46,6 +46,8 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .BR {
+   position: absolute;
+   display:block;
    font-weight:normal;
    right: 5px;
    text-align:right;
