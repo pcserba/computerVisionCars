@@ -9,17 +9,17 @@ document.getElementById('caption BR2').innerHTML='<a href=#>[Registrations by co
 
 document.getElementById('caption BR').addEventListener('click', function(){
    showYear(res[2].results);  });
-document.getElementById('caption BR2').addEventListener('click', function(){
+document.getElementById('caption BR1').addEventListener('click', function(){
    showMS(res[1].results);  });
-document.getElementById('caption BR3').addEventListener('click', function(){
+document.getElementById('caption BR2').addEventListener('click', function(){
    showManufacturer(res[3].results);  });
 
 
 	//transition opacity
 	document.getElementById('caption TL').classList.toggle('show');
 	document.getElementById('caption BR').classList.toggle('show');
+	document.getElementById('caption BR1').classList.toggle('show');
 	document.getElementById('caption BR2').classList.toggle('show');
-	document.getElementById('caption BR3').classList.toggle('show');
 	};
 
 
