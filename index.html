@@ -1,62 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="json/carnet.json"></script> 
-<script type="text/javascript" src="json/initialResult.json"></script> 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
-<script type="text/javascript" src="js/updateUI.js"></script> 
-<script type="text/javascript" src="js/chartJS-graphs.js"></script> 
+  <head>
+    <title>Webcam Capture Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/webcam.css">
+    <script defer src="js/webcam.js"></script>
+  </head>
+  <body>
+    <!-- (A) VIDEO LIVE FEED -->
+    <video id="kam-live" autoplay></video>
 
+    <!-- (B) SNAPSHOTS -->
+    <div id="kam-snaps"></div>
 
-<script>
-//initial results for UI
-const fromCarnet=JSON.parse(carnetResponse);
-var discomap1="https://discodata.eea.europa.eu/sql?query=SELECT%20%0D%0A%20%20%20%20mh%0D%0A%20%20%20%20%2CCn_short%0D%0A%20%20%20%20%2Cyear%0D%0A%20%20%20%20%2Cround(avg(EWLTP)%2C3)%20as%20avgEWLTP%0D%0A%20%20%20%20%2Cround(avg(Ec)%2C3)%20as%20avgEc%0D%0A%20%20%20%20%2Cround(avg(Ep)%2C3)%20as%20avgEp%0D%0A%20%20%20%20%2Cround(avg(M)%2C2)%20as%20avgM%0D%0A%20%20%20%20%2Ccount(distinct%20ID)%20as%20countVIN%0D%0A%20%20%20%20FROM%20%0D%0A%20%20%20%20%20%20%20%20(%0D%0A%20%20%20%20%20%20%20%20Select%20Mh%0D%0A%20%20%20%20%20%20%20%20%2C%27"+ fromCarnet[0].model_name+"%27%20as%20Cn_short%0D%0A%20%20%20%20%20%20%20%20%2Cyear%0D%0A%20%20%20%20%20%20%20%20%2CID%0D%0A%20%20%20%20%20%20%20%20%2Ccast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5Bec%20(cm3)%5D%20as%20numeric(10%2C0))%20as%20Ec%0D%0A%20%20%20%20%20%20%20%20%2Ccast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5Bep%20(KW)%5D%20as%20numeric(10%2C0))%20as%20Ep%0D%0A%20%20%20%20%20%20%20%20%2Ccast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5D%20as%20numeric(10%2C0))%20as%20EWLTP%0D%0A%20%20%20%20%20%20%20%20%2Ccast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BM%20(kg)%5D%20as%20numeric(10%2C0))%20as%20M%0D%0A%20%20%20%20%20%20%20%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%0D%0A%20%20%20%20%20%20%20%20WHERE%20Cn%20LIKE%20%27%25" + fromCarnet[0].model_name + "%25%27%0D%0A%20%20%20%20%20%20%20%20AND%20Mh%3D%27"+ fromCarnet[0].make_name+"%27%0D%0A%20%20%20%20%20%20%20%20--AND%20status%3D%27P%27%0D%0A%20%20%20%20%20%20%20%20AND%20year%3D'+2020+'%0D%0A%20%20%20%20%20%20%20%20)%20as%20a%0D%0AGROUP%20BY%20Mh%2CCN_short%2Cyear%0D%0A&p=1&nrOfHits=100&mail=null&schema=null"
-
-//result by country
-var discomap2="https://discodata.eea.europa.eu/sql?query=SELECT%20%0D%0A%20%20%20%20Mh%0D%0A%20%20%20%20%2CMS%0D%0A%20%20%20%20%2C%27"+fromCarnet[0].model_name+"%27%20as%20Cn_short%0D%0A%20%20%20%20%2Cyear%0D%0A%20%20%20%20%2Ccount(distinct%20ID)%20as%20countVIN%0D%0A%20%20%20%20FROM%20%0D%0A%20%20%20%20%20%20%20%20(%0D%0A%20%20%20%20%20%20%20%20Select%20%0D%0A%20%20%20%20%20%20%20%20Mh%0D%0A%20%20%20%20%20%20%20%20%2CMS%0D%0A%20%20%20%20%20%20%20%20%2Cyear%0D%0A%20%20%20%20%20%20%20%20%2CID%0D%0A%20%20%20%20%20%20%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%0D%0A%20%20%20%20%20%20%20%20WHERE%20Cn%20LIKE%20%27%25"+fromCarnet[0].model_name+"%25%27%0D%0A%20%20%20%20%20%20%20%20AND%20Mh%3D%27"+fromCarnet[0].make_name+"%27%0D%0A%20%20%20%20%20%20%20%20--AND%20status%3D%27P%27%0D%0A%20%20%20%20%20%20%20%20AND%20year%3D2020%0D%0A%20%20%20%20%20%20%20%20GROUP%20BY%20Mh%2CMS%2Cyear%2CID)%20as%20a%0D%0AGROUP%20BY%20Mh%2Cms%2C%20year%0D%0AORDER%20BY%20MS&p=1&nrOfHits=100&mail=null&schema=null"
-
-//result by year
-var discomap3="https://discodata.eea.europa.eu/sql?query=SELECT%20%0D%0A%20%20%20%20Mh%0D%0A%20%20%20%20%2C%27"+fromCarnet[0].model_name+"%27%20as%20Cn_short%0D%0A%20%20%20%20%2Cyear%0D%0A%20%20%20%20%2Ccount(distinct%20ID)%20as%20countVIN%0D%0A%20%20%20%20FROM%20%0D%0A%20%20%20%20%20%20%20%20(%0D%0A%20%20%20%20%20%20%20%20Select%20%0D%0A%20%20%20%20%20%20%20%20Mh%0D%0A%20%20%20%20%20%20%20%20%2CMS%0D%0A%20%20%20%20%20%20%20%20%2Cyear%0D%0A%20%20%20%20%20%20%20%20%2CID%0D%0A%20%20%20%20%20%20%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%0D%0A%20%20%20%20%20%20%20%20WHERE%20Cn%20LIKE%20%27%25"+fromCarnet[0].model_name+"%25%27%0D%0A%20%20%20%20%20%20%20%20AND%20Mh%3D%27"+fromCarnet[0].make_name+"%27%0D%0A%20%20%20%20%20%20%20%20--AND%20status%3D%27P%27%0D%0A%20%20%20%20%20%20%20%20AND%20year%3E2017%0D%0AGROUP%20BY%20Mh%2CMS%2Cyear%2CID)%20as%20a%0D%0AGROUP%20BY%20Mh%2Cyear%0D%0AORDER%20BY%20year&p=1&nrOfHits=100&mail=null&schema=null"
-
-//result by manufacturer
-var discomap4 = "https://discodata.eea.europa.eu/sql?query=%0D%0ASELECT%20%0D%0A%20%20%20%20Mh%0D%0A%20%20%20%20%2Cyear%0D%0A%20%20%20%20%2Cround(avg(EWLTP)%2C3)%20as%20avgEWLTP%0D%0A%20%20%20%20%2Ccount(distinct%20ID)%20as%20countVIN%0D%0A%20%20%20%20FROM%20%0D%0A%20%20%20%20%20%20%20%20(%0D%0A%20%20%20%20%20%20%20%20Select%20%0D%0A%20%20%20%20%20%20%20%20Mh%0D%0A%20%20%20%20%20%20%20%20%2CCn%0D%0A%20%20%20%20%20%20%20%20%2Cyear%0D%0A%20%20%20%20%20%20%20%20%2CID%0D%0A%20%20%20%20%20%20%20%2Ccast(%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D.%5BEwltp%20(g%2Fkm)%5D%20as%20numeric(10%2C0))%20as%20EWLTP%0D%0A%20%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%0D%0A%20%20%20%20%20%20%20%20WHERE%20Mh%3D%27"+fromCarnet[0].make_name+"%27%0D%0A%20%20%20%20%20%20%20%20--AND%20status%3D%27P%27%0D%0A%20%20%20%20%20%20%20AND%20year%3E%3D2018%0D%0A%20%20%20%20%20%20%20%20GROUP%20BY%20Mh%2CCn%2Cyear%2CID%2C%20%5BEwltp%20(g%2Fkm)%5D)%20as%20a%0D%0AGROUP%20BY%20Mh%2C%20year%0D%0AORDER%20BY%20year%0D%0A&p=1&nrOfHits=100&mail=null&schema=null"
-
-//Manufacturer fromCarnet[0].make_name;
-//model fromCarnet[0].model_name;
-
-const fetchReq1 = fetch(discomap1).then(res=>res.json());
-const fetchReq2 = fetch(discomap2).then(res=>res.json());
-const fetchReq3 = fetch(discomap3).then(res=>res.json());
-const fetchReq4 = fetch(discomap4).then(res=>res.json());
-
-const allData = Promise.all([fetchReq1,fetchReq2,fetchReq3,fetchReq4]);
-// attach then() handler to the allData Promise
-allData.then((res) => {console.log(res);
-	showData(res)});
-
-</script>
-
-
-</head>
-<body>
-<h1>
-<div class="imageContainer">
-<img src="img/car.jpg" width=100%>
-	<div class="caption TL" id="caption TL"></div>
-	<div class="caption BR" id="BR" style="position: absolute;bottom: 65%;"></div>
-	<div class="caption BR" id="BR1" style="position: absolute;bottom: 61%;"></div>
-	<div class="caption BR" id="BR2" style="position: absolute;bottom: 57%;"></div>
-
-<div class="caption BL" id="caption BL"><canvas id="myChart" height="100%"></canvas></div>
-</div>
-</H1>
-
-</body>
-
-
-
+    <!-- (C) CONTROLS -->
+    <div id="kam-controls">
+      <button id="kam-take" disabled>
+        <span class="material-icons">photo_camera</span>
+      </button>
+    </div>
+  </body>
 </html>
-
