@@ -41,23 +41,38 @@ var webkam = {
   	var data = new FormData();
   	data.append("up", file);
  
-//new SwaggerClient('https://api.carnet.ai/v2/mmg/detect?//box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF')
+var specUrl = 'https://petstore.swagger.io/v2/swagger.json'; // data urls are OK too 'data:application/json;base64,abc...'
+SwaggerClient.http.withCredentials = true; // this activates CORS, if necessary
 
-new SwaggerClient('https://petstore.swagger.io/v2/swagger.json')
+var swaggerClient = new SwaggerClient(specUrl)
+      .then(function (swaggerClient) {
+          return swaggerClient.apis.pet.addPet({id: 1, name: "bobby"}); // chaining promises
+      }, function (reason) {
+         console.error("failed to load the spec" + reason);
+      })
+      .then(function(addPetResult) {
+         console.log(addPetResult.obj);
+         // you may return more promises, if necessary
+      }, function (reason) {
+          console.error("failed on API call " + reason);
+      });
 
-const request = {
-  url: 'https://petstore.swagger.io/v2/swagger.json',
-  mode: 'no-cors',
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/octet-stream',
-    'api-key': '91761936-0b93-4f6e-919e-2a8ccc2f635d',
-    'accept': 'application/json',
-    'Access-Control-Allow-Origin': '*'
-  },
-};
 
-SwaggerClient.http(request); // => Promise(Response)
+//new SwaggerClient('https://petstore.swagger.io/v2/swagger.json')
+
+//const request = {
+//  url: 'https://petstore.swagger.io/v2/swagger.json',
+//  mode: 'no-cors',
+//  method: 'GET',
+//  headers: {
+//    'Content-Type': 'application/octet-stream',
+//    'api-key': '91761936-0b93-4f6e-919e-2a8ccc2f635d',
+//    'accept': 'application/json',
+//    'Access-Control-Allow-Origin': '*'
+//  },
+//};
+
+//SwaggerClient.http(request); // => Promise(Response)
 	});
 
     // (B3) DONE
