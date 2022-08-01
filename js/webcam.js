@@ -48,7 +48,7 @@ new SwaggerClient('https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_widt
 
 const request = {
   url: 'https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF',
-  authorizations: { ApiKey: { value: '91761936-0b93-4f6e-919e-2a8ccc2f635d' } }
+  authorizations: { ApiKey: { value: '91761936-0b93-4f6e-919e-2a8ccc2f635d' } },
   mode: 'cors',
   method: 'POST',
   headers: {
