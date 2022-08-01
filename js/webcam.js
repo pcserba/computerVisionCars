@@ -41,7 +41,7 @@ var webkam = {
   	var data = new FormData();
   	data.append("up", file);
  
-new SwaggerClient('https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF')
+//new SwaggerClient('https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF')
  
 
 //new SwaggerClient()
@@ -56,7 +56,7 @@ const request = {
   },
 };
 
-SwaggerClient.http(request); // => Promise(Response)
+//SwaggerClient.http(request); // => Promise(Response)
 	});
 
     // (B3) DONE
