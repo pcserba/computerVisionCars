@@ -43,12 +43,12 @@ var webkam = {
  
 //new SwaggerClient('https://api.carnet.ai/v2/mmg/detect?//box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF')
 
-new SwaggerClient('https://petstore.swagger.io/v2/swagger.json')
+new SwaggerClient()
 
 const request = {
   url: 'https://petstore.swagger.io/v2/swagger.json',
   mode: 'no-cors',
-  method: 'POST',
+  method: 'GET',
   headers: {
     'Content-Type': 'application/octet-stream',
     'api-key': '91761936-0b93-4f6e-919e-2a8ccc2f635d',
