@@ -51,7 +51,7 @@ const request = {
     'Content-Type': 'application/octet-stream',
     'api-key': '91761936-0b93-4f6e-919e-2a8ccc2f635d',
     'accept': 'application/json',
-    'Access-Control-Allow-Origin': *
+    'Access-Control-Allow-Origin': '*'
   },
 };
 
