@@ -40,7 +40,23 @@ var webkam = {
   	let file = new File([blob], "demo.png", { type: "image/png" });
   	var data = new FormData();
   	data.append("up", file);
-  	fetch("https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF", { method:"POST",withCredentials: true,credentials: 'include', 'mode': 'no-cors', body:data, headers: {'X-API-Key': "91761936-0b93-4f6e-919e-2a8ccc2f635d", 'Access-Control-Allow-Origin': '*', accept: 'application/json'}});
+ 
+new SwaggerClient('https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF')
+ 
+
+//new SwaggerClient()
+
+const request = {
+  url: 'https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15&box_select=center&region=DEF',
+  authorizations: { ApiKey: { value: '91761936-0b93-4f6e-919e-2a8ccc2f635d' } }
+  mode: 'cors',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+};
+
+SwaggerClient.http(request); // => Promise(Response)
 	});
 
     // (B3) DONE
