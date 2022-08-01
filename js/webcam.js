@@ -42,7 +42,7 @@ var webkam = {
   	data.append("up", file);
  
 var specUrl = 'https://petstore.swagger.io/v2/swagger.json'; // data urls are OK too 'data:application/json;base64,abc...'
-SwaggerClient.http.withCredentials = true; // this activates CORS, if necessary
+//SwaggerClient.http.withCredentials = true; // this activates CORS, if necessary
 
 var swaggerClient = new SwaggerClient(specUrl)
       .then(function (swaggerClient) {
@@ -57,8 +57,6 @@ var swaggerClient = new SwaggerClient(specUrl)
           console.error("failed on API call " + reason);
       });
 
-
-//new SwaggerClient('https://petstore.swagger.io/v2/swagger.json')
 
 //const request = {
 //  url: 'https://petstore.swagger.io/v2/swagger.json',
