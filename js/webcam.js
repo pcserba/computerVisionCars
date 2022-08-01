@@ -51,8 +51,9 @@ const request = {
   mode: 'no-cors',
   method: 'POST',
   headers: {
-    'Content-Type': 'application/json',
-    authorizations: { ApiKey: { value: '91761936-0b93-4f6e-919e-2a8ccc2f635d' } },
+    'Content-Type': 'application/octet-stream',
+    'api-key': '91761936-0b93-4f6e-919e-2a8ccc2f635d'},
+    'accept': 'application/json'
   },
 };
 
