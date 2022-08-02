@@ -47,7 +47,7 @@ var webkam = {
 
 const data1 = JSON.stringify({
 	"url": "https://petstore.swagger.io/v2/swagger.json",
-	"method": "POST",
+	"method": "GET",
 	"params": {},
 	"data": {},
 	//"headers": {"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept": "application/json", "Content-Type": "application/octet-stream"},
