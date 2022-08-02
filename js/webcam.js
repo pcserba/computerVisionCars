@@ -53,7 +53,7 @@ const data1 = JSON.stringify({
 });
 
 var xhr = new XMLHttpRequest();
-xhr.open("POST", url);
+//xhr.open("POST", url);
 
 xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/");
 //xhr.setRequestHeader("accept", "application/json");
