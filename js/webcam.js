@@ -34,7 +34,7 @@ var webkam = {
     canvas.width = vWidth;
     canvas.height = vHeight;
   	webkam.hVid.style.display = "none";
-    ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
+        ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
 	dataURL = canvas.toDataURL("image/jpeg",1.0);
 	console.log(dataURL);
 
@@ -55,7 +55,7 @@ xhr.addEventListener("readystatechange", function () {
 	if (this.readyState === this.DONE) {
 		console.log(this.responseText);
 	}
-});
+
 
 xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/v1");
 xhr.setRequestHeader("content-type", "application/json");
