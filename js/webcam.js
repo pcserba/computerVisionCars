@@ -36,7 +36,7 @@ var webkam = {
   	webkam.hVid.style.display = "none";
         ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
 	dataURL = canvas.toDataURL("image/jpeg",1.0);
-	console.log(dataURL);
+	//console.log(dataURL);
 
 
 const data1 = JSON.stringify({
