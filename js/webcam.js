@@ -33,20 +33,17 @@ var webkam = {
     // (B2) CAPTURE VIDEO FRAME TO CANVAS
     canvas.width = vWidth;
     canvas.height = vHeight;
-  webkam.hVid.style.display = "none";
+  	webkam.hVid.style.display = "none";
     ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
+	dataURL = canvas.toDataURL("image/jpeg",1.0);
+	console.log(dataURL);
 
-	canvas.toBlob((blob) => {
-  	let file = new File([blob], "demo.png", { type: "image/png" });
-  	var data = new FormData();
-  	data.append("up", file);
- 
 
 const data1 = JSON.stringify({
 	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
 	"method": "POST",
 	"params": {},
-	"data": {data},
+	"data": {dataURL},
 	"headers": {"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept": "application/json", "Content-Type": "application/octet-stream"},
 	"cookies": {}
 });
