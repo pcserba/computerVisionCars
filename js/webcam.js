@@ -63,7 +63,7 @@ xhr.addEventListener("readystatechange", function () {
 	}
 });
 
-xhr.open("GET", "https://cors-proxy1.p.rapidapi.com/");
+xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/");
 xhr.setRequestHeader("X-RapidAPI-Key", "8f9246e873msh085a46348edfd71p1b161cjsn82acff12e147");
 xhr.setRequestHeader("X-RapidAPI-Host", "cors-proxy1.p.rapidapi.com");
 
