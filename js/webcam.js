@@ -49,6 +49,7 @@ xhr.open("POST", url);
 xhr.setRequestHeader("accept", "application/json");
 xhr.setRequestHeader("api-key", "91761936-0b93-4f6e-919e-2a8ccc2f635d");
 xhr.setRequestHeader("Content-Type", "application/octet-stream");
+xhr.setRequestHeader("mode", "no-cors");
 xhr.setRequestHeader("Access-Control-Allow-Headers", "Content-Type, 91761936-0b93-4f6e-919e-2a8ccc2f635d, Authorization")
 
 xhr.onreadystatechange = function () {
