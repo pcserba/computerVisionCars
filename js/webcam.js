@@ -46,16 +46,15 @@ var webkam = {
 
 
 const data1 = JSON.stringify({
-	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
+	"url": "https://petstore.swagger.io/v2/swagger.json",
 	"method": "POST",
 	"params": {},
 	"data": {},
-	"headers": {"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept": "application/json", "Content-Type": "application/octet-stream"},
+	//"headers": {"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept": "application/json", "Content-Type": "application/octet-stream"},
 	"cookies": {}
 });
 
 var xhr = new XMLHttpRequest();
-//xhr.open("POST", url);
 
 xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/");
 xhr.setRequestHeader("content-type", "application/json");
