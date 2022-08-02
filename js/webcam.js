@@ -43,7 +43,7 @@ var webkam = {
  
 
 
-const data = JSON.stringify({
+const data1 = JSON.stringify({
 	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15",
 	"method": "POST",
 	"params": {},
@@ -68,7 +68,7 @@ xhr.onreadystatechange = function () {
       console.log(xhr.responseText);
    }};
 
-xhr.send(data);
+xhr.send(data1);
 });
 
     // (B3) DONE
