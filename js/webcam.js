@@ -44,7 +44,7 @@ var webkam = {
 
 
 const data1 = JSON.stringify({
-	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15",
+	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
 	"method": "POST",
 	"params": {},
 	"data": {},
