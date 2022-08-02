@@ -44,12 +44,19 @@ var webkam = {
 var url = "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1&box_max_ratio=3.15";
 
 var xhr = new XMLHttpRequest();
-xhr.open("POST", url);
+//xhr.open("POST", url);
+
+//xhr.setRequestHeader("accept", "application/json");
+//xhr.setRequestHeader("api-key", "91761936-0b93-4f6e-919e-2a8ccc2f635d");
+//xhr.setRequestHeader("Content-Type", "application/octet-stream");
+//xhr.setRequestHeader("Access-Control-Allow-Headers", "Content-Type, 91761936-0b93-4f6e-919e-2a8ccc2f635d, Authorization")
+
+var url = "https://petstore.swagger.io/v2/swagger.json";
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
 
 xhr.setRequestHeader("accept", "application/json");
-xhr.setRequestHeader("api-key", "91761936-0b93-4f6e-919e-2a8ccc2f635d");
-xhr.setRequestHeader("Content-Type", "application/octet-stream");
-//xhr.setRequestHeader("Access-Control-Allow-Headers", "Content-Type, 91761936-0b93-4f6e-919e-2a8ccc2f635d, Authorization")
 
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
