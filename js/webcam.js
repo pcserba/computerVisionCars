@@ -53,7 +53,8 @@ const data1 = JSON.stringify({
 	"cookies": {}
 });
 
-var xhr = new XMLHttpRequest();
+
+const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
 xhr.addEventListener("readystatechange", function () {
@@ -62,11 +63,9 @@ xhr.addEventListener("readystatechange", function () {
 	}
 });
 
-xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/");
-xhr.setRequestHeader("content-type", "application/json");
+xhr.open("GET", "https://cors-proxy1.p.rapidapi.com/");
 xhr.setRequestHeader("X-RapidAPI-Key", "8f9246e873msh085a46348edfd71p1b161cjsn82acff12e147");
 xhr.setRequestHeader("X-RapidAPI-Host", "cors-proxy1.p.rapidapi.com");
-
 
 xhr.send(data1);
 });
