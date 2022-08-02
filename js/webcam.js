@@ -43,8 +43,8 @@ var webkam = {
  
 
 const data1 = JSON.stringify({
-	"url": "https://petstore.swagger.io/v2/swagger.json",
-	"method": "GET",
+	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
+	"method": "POST",
 	"params": {},
 	"data": {},
 	"headers": {},
