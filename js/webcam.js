@@ -55,17 +55,19 @@ const data1 = JSON.stringify({
 });
 
 var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
 
 xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/");
 xhr.setRequestHeader("content-type", "application/json");
 xhr.setRequestHeader("X-RapidAPI-Key", "8f9246e873msh085a46348edfd71p1b161cjsn82acff12e147");
 xhr.setRequestHeader("X-RapidAPI-Host", "cors-proxy1.p.rapidapi.com");
 
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
-   }};
 
 xhr.send(data1);
 });
