@@ -35,7 +35,7 @@ var webkam = {
     canvas.height = vHeight;
   	webkam.hVid.style.display = "none";
         ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
-	dataURL = canvas.toDataURL("image/jpeg",1.0);
+	//dataURL = canvas.toDataURL("image/jpeg",1.0);
 	//console.log(dataURL);
 
 
@@ -43,7 +43,7 @@ const data1 = JSON.stringify({
 	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
 	"method": "POST",
 	"params": {},
-	"data": {dataURL},
+	"data": {},
 	"headers": {"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept": "application/json", "Content-Type": "application/octet-stream"},
 	"cookies": {}
 });
