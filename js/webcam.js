@@ -63,11 +63,10 @@ xhr.setRequestHeader("X-RapidAPI-Key", "8f9246e873msh085a46348edfd71p1b161cjsn82
 xhr.setRequestHeader("X-RapidAPI-Host", "cors-proxy1.p.rapidapi.com");
 
 xhr.send(data1);
-// (B3) DONE
- return canvas;
-  },
+});
 
-  // (C) TAKE A SNAPSHOT - PUT CANVAS INTO <DIV> WRAPPER
+
+// (C) TAKE A SNAPSHOT - PUT CANVAS INTO <DIV> WRAPPER
   take : () => {
 	webkam.hSnaps.appendChild(webkam.snap());
   },
