@@ -42,31 +42,28 @@ var webkam = {
   	data.append("up", file);
  
 
-
 const data1 = JSON.stringify({
-	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
-	"method": "POST",
+	"url": "",
+	"method": "GET",
 	"params": {},
 	"data": {},
-	"headers": {"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept": "application/json", "Content-Type": "application/octet-stream"},
+	"headers": {},
 	"cookies": {}
 });
 
-var xhr = new XMLHttpRequest();
-//xhr.open("POST", url);
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
-xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/");
-//xhr.setRequestHeader("accept", "application/json");
-//xhr.setRequestHeader();
-//xhr.setRequestHeader("Content-Type", "application/octet-stream");
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("POST", "https://cors-proxy1.p.rapidapi.com/v1");
+xhr.setRequestHeader("content-type", "application/json");
 xhr.setRequestHeader("X-RapidAPI-Key", "8f9246e873msh085a46348edfd71p1b161cjsn82acff12e147");
 xhr.setRequestHeader("X-RapidAPI-Host", "cors-proxy1.p.rapidapi.com");
-
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
-   }};
 
 xhr.send(data1);
 });
