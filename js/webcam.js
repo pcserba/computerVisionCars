@@ -68,7 +68,7 @@ xhr.onreadystatechange = function () {
       console.log(xhr.responseText);
    }};
 
-xhr.send();
+xhr.send(data);
 });
 
     // (B3) DONE
