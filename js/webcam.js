@@ -50,7 +50,7 @@ const data1 = JSON.stringify({
 	"method": "POST",
 	"params": {},
 	"data": {},
-	"headers": {"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept": "application/json", "Content-Type": "application/octet-stream"},
+	"headers": {"api-key: 91761936-0b93-4f6e-919e-2a8ccc2f635d", "accept: application/json", "Content-Type: application/octet-stream"},
 	"cookies": {}
 });
 
