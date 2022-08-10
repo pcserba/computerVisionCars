@@ -38,10 +38,7 @@ var webkam = {
 
 	canvas.toBlob((blob) => {
   	let file = new File([blob], "1.jpg", { type: "image/jpeg" });
-  	var data = new FormData();
-  	data.append("up", file);
-	dataURL = canvas.toDataURL("image/jpeg",1.0);
-	console.log(dataURL);
+  	var data = new FormData(file);
 	console.log(data);
  
 
