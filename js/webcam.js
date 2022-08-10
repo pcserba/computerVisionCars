@@ -37,9 +37,8 @@ var webkam = {
     ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
 
 	canvas.toBlob((blob) => {
-  	let file = new File([blob], "1.jpg", { type: "image/jpeg" });
-  	var data = new FormData(file);
-	console.log(data);
+  	let file = new Blob(['blob'], { type: "image/jpeg" });
+	console.log(file);
  
 
 
