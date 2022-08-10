@@ -42,8 +42,7 @@ var webkam = {
   	data.append("up", file);
 	dataURL = btoa(canvas.toDataURL("image/jpeg",1.0));
 	console.log(dataURL);
-	dataURL2 = atob(dataURL);
-	console.log(dataURL2);
+	dataURL2 = atob(decodeURIComponent(dataURL));
  
 
 
