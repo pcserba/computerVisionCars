@@ -40,8 +40,10 @@ var webkam = {
   	let file = new File([blob], "demo.png", { type: "image/png" });
   	var data = new FormData();
   	data.append("up", file);
-	dataURL = atob(canvas.toDataURL("image/jpeg",1.0));
+	dataURL = canvas.toDataURL("image/jpeg",1.0);
+	dataURL2 = atob(dataURL);
 	console.log(dataURL);
+	console.log(dataURL2);
  
 
 
