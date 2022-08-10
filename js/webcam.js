@@ -41,7 +41,7 @@ var webkam = {
   	var data = new FormData();
   	data.append("up", file);
 	dataURL = canvas.toDataURL("image/jpeg",1.0);
-	dataURL2 = atob(dataURL);
+	dataURL2 = dataURL.atob();
 	console.log(dataURL);
 	console.log(dataURL2);
  
