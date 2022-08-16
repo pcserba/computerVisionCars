@@ -39,7 +39,7 @@ var webkam = {
 //	canvas.toBlob((blob) => {
 // 	let file = new Blob(['blob'], { type: "image/jpeg" });
 //	console.log(file);
-// 	 xhr.open("POST", "http://www.darwah-group.com/computerVision/saveImg.php", true);
+// 	 xhr.open("POST", "https://www.darwah-group.com/computerVision/saveImg.php", true);
 
 canvas.toBlob((blob) => {
   let file = new File([blob], "demo.png", { type: "image/png" });
