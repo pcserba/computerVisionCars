@@ -44,7 +44,7 @@ var webkam = {
 canvas.toBlob((blob) => {
   let file = new File([blob], "demo.png", { type: "image/png" });
   var data = new FormData();
-  data.append("up", file);
+  data.append("imageData", file);
   fetch("https://www.darwah-group.com/computerVision/saveImg.php", { method:"POST", body:data });
 
 const data1 = JSON.stringify({
