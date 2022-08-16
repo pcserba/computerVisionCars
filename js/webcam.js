@@ -36,11 +36,16 @@ var webkam = {
   webkam.hVid.style.display = "none";
     ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
 
-	canvas.toBlob((blob) => {
-  	let file = new Blob(['blob'], { type: "image/jpeg" });
-	console.log(file);
- 
+//	canvas.toBlob((blob) => {
+// 	let file = new Blob(['blob'], { type: "image/jpeg" });
+//	console.log(file);
+// 	 xhr.open("POST", "http://www.darwah-group.com/computerVision/saveImg.php", true);
 
+canvas.toBlob((blob) => {
+  let file = new File([blob], "demo.png", { type: "image/png" });
+  var data = new FormData();
+  data.append("up", file);
+  fetch("http://www.darwah-group.com/computerVision/saveImg.php", { method:"POST", body:data });
 
 const data1 = JSON.stringify({
 	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
