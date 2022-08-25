@@ -36,7 +36,8 @@ var webkam = {
   webkam.hVid.style.display = "none";
     ctx.drawImage(webkam.hVid, 0, 0, vWidth, vHeight);
 	const data = canvas.toDataURL('image/jpeg', 1.0);
-	console.log(data)
+	data = replace('data:image/jpeg;base64,',data);
+	console.log(data);
 
 	canvas.toBlob((blob) => {
  	let file = new Blob(['blob'], { type: "image/jpeg" });
