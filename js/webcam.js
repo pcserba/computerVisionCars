@@ -47,7 +47,7 @@ const data1 = JSON.stringify({
 	"url": "https://api.carnet.ai/v2/mmg/detect?box_offset=0&box_min_width=180&box_min_height=180&box_min_ratio=1",
 	"method": "GET",
 	"params": {},
-	"data": {"https://bringatrailer.com/wp-content/uploads/2020/07/2017_audi_r8_v10_plus_coupe_159710902343b60a419a2017_audi_r8_v10_plus_coupe_159530284595d565ef66e7dc0f92306-87a3-4f57-9fae-b5ce42ae5a7d-YsntYL.jpg"},
+	"data": "https://bringatrailer.com/wp-content/uploads/2020/07/2017_audi_r8_v10_plus_coupe_159710902343b60a419a2017_audi_r8_v10_plus_coupe_159530284595d565ef66e7dc0f92306-87a3-4f57-9fae-b5ce42ae5a7d-YsntYL.jpg",
 	"headers": {
 		"api-key": "91761936-0b93-4f6e-919e-2a8ccc2f635d",
 		"accept": "application/json",
