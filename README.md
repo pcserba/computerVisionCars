@@ -1,9 +1,12 @@
 # computerVisionCars
 AI powered visualization of passenger cars data from European Environment Agency (EEA)
 ## Intro
-Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. The figures might be slightly less detailed/reliable than the full dataset (due to different namings of companies/models in the 2 components), but the aim is to play and experiment. Target audience: 7 year old boys.
+Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. 
 
 The user 'scans' cars in the street and get back some basic info (most notably: Co2 emissions) for similar cars from the EEA dataset above.
+
+Due to different namings of companies/models in the 2 components, the figures might be slightly less reliable than the full dataset, but the aim is to play and experiment. Target audience: 7 year old boys.
+
 ## Building blocks
 ### Layout and style (card.css)
 Handles the display, colors, general styling etc...
@@ -23,10 +26,10 @@ Displays additional data as charts for the vehicle model (by year, by country), 
 ### Images (img folder)
 Holds design elements and the files uploaded by user that are then analysed by the AI
 ## Credits
-AI powered in the cloud by www.carnet.ai
+AI powered in the cloud by [Carnet.ai](www.carnet.ai)
 
-Charts rendering with www.chartjs.org library
+Charts rendering with [ChartJS](www.chartjs.org) library
 
-Data from www.eea.europa.eu
+Data from [European Environment Agency](www.eea.europa.eu)
 
-Imagined and put together by Peter Cserba/2022 
+Imagined and put together by [Peter Cserba](https://www.darwah-group.com/)/2022 
