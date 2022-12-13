@@ -11,12 +11,12 @@ Handles the display, colors, general styling etc...
 Initial landing page + handling of user input (mobile: picture from the webcam; desktop: local file). The file is displayed on the canvas before being sent further.
 ### Webcam (webcam.js)
 Reads picture from the canvas, calls uploader+AI, and passes 'make' and 'model' parameters to discodata
-#### Carnet AI (cURL.php)
-The online AI to be connected to (carnet.ai). It expects a picture and returns the cars make and model. 
-We save the file on a server and then pass-through the file to the AI. A key from carnet.ai is needed to run the API (redacted in the file)
-### Discodata (part of webcam.js)
-The EEA's data provider. Queries are written in plain SQL on https://discodata.eea.europa.eu/ then we export the generated URL (to be used in webcam.js) and replace the model/make parameters with the values coming from the AI
-## Rendering (updateUI.js)
+  #### Carnet AI (cURL.php)
+  The online AI to be connected to (carnet.ai). It expects a picture and returns the cars make and model. 
+  We save the file on a server and then pass-through the file to the AI. A key from carnet.ai is needed to run the API (redacted in the file)
+  #### Discodata (part of webcam.js)
+  The EEA's data provider. Queries are written in plain SQL on https://discodata.eea.europa.eu/ then we export the generated URL (to be used in webcam.js) and replace    the model/make parameters with the values coming from the AI
+### Rendering (updateUI.js)
 Renders the display with the data from carnetAI and updates the layout. Provides links to additional visualizations
 ### Charts (chartjs-graphs.js/charts.min.js)
 Displays additional data as charts for the vehicle model (by year, by country), using a local copy of chartjs.org
