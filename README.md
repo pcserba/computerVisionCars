@@ -24,6 +24,9 @@ Displays additional data as charts for the vehicle model (by year, by country), 
 Holds design elements and the files uploaded by user that are then analysed by the AI
 ## Credits
 AI powered in the cloud by www.carnet.ai
+
 Charts rendering with www.chartjs.org library
+
 Data from www.eea.europa.eu
+
 Imagined and put together by Peter Cserba/2022 
