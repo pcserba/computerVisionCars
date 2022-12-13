@@ -1,0 +1,86 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  background: #101010;
+}
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.a, a:visited, a:link {
+color:#FFFFFF;
+}
+
+#roundc3 {
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    background: #101010;
+    padding: 0px; 
+    width: 99%;
+    height: 90%; 
+}
+
+#loading {
+   background: url('../img/loader.gif') no-repeat center;
+	float: right;
+	position:fixed;
+ 	height: 50%;
+	width: 100%;
+ 	opacity: 0;
+	font-weight:normal;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+
+#loading.show { 
+	transition:opacity 1s;
+	opacity: 0.8;
+ } 
+
+#summary {
+	float: right;
+	position:fixed;
+   	padding-left:10px;
+	height: 50%;
+	width: 97%;
+	color:#FFFFFF;
+ 	background-color: #000000;
+	opacity: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+	z-index: 5;
+}
+
+#summary.show { 
+	transition:opacity 1s;
+	opacity: 0.8;
+ }
+
+table {
+	table-layout: auto;
+	width: 100%;
+}
+
+td {
+  overflow: hidden;
+  text-align:left;
+}
+
+td:nth-child(2) {
+ text-align: right;
+ padding-right:10px;
+ }
+
+.BL {
+   position: absolute;
+   bottom: 0px;
+   padding-left:10px;
+   text-align: left;
+   height: 50%;
+   width: 97%;
+   color:#FFFFFF;
+   background-color: #000000;
+   opacity: 0;
+   transition:opacity 1s;
+}
+
+.BL.show { opacity: 0.8; } 

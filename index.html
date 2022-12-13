@@ -1,26 +1,52 @@
 <!DOCTYPE html>
-<html>
   <head>
     <title>Webcam Capture Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- https://fonts.google.com/icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/webcam.css">
+    <link rel="stylesheet" href="css/card.css">
     <script defer src="js/webcam.js"></script>
+    <script defer src="js/updateUI.js"></script>
+    <script defer src="js/chart.min.js"></script>
+    <script defer src="js/chartJS-graphs.js"></script> 
 
   </head>
   <body>
-    <!-- (A) VIDEO LIVE FEED -->
-    <video id="kam-live" autoplay></video>
 
-    <!-- (B) SNAPSHOTS -->
-    <div id="kam-snaps"></div>
 
-    <!-- (C) CONTROLS -->
-    <div id="kam-controls">
-      <button id="kam-take" disabled>
-        <span class="material-icons">photo_camera</span>
-      </button>
-    </div>
-  </body>
+<html>
+<div id=roundc3>
+		<label id=uploadButton style="cursor:pointer; z-index: 100;">
+		  <img src="img/shutter2.png" width=100%>
+		  <input type=file id=input accept='image/*' capture='environment' accept='video' value='Launch camera' style="display:none">
+		</label>
+	<div id=summary></div>
+	<div id=loading></div>
+	<div class="BL" id="BL"><canvas id="myChart" height="100%"></canvas></div>
+	<canvas id=canvas></canvas>
+
+</div>
+
+
 </html>
+<script> 
+var c = document.getElementById('canvas')
+var input = document.getElementById('input')
+var ctx = canvas.getContext('2d')
+
+input.onchange=function() {
+    var img = new Image()
+    img.onload = function() {
+	c.width = window.innerWidth*0.99;
+   	c.height = c.width * this.height / this.width;
+        ctx.drawImage(this, 0, 0,c.width, c.height)
+        URL.revokeObjectURL(this.src)
+    }
+    img.src = URL.createObjectURL(this.files[0])
+	f=this.files[0];
+    var ub = document.getElementById('uploadButton');
+	ub.parentNode.removeChild(ub);
+//    var h = document.getElementById('header');
+//	h.parentNode.removeChild(h);
+	convertBlob();	
+}
+</script> 
+
