@@ -26,7 +26,7 @@ Displays additional data as charts for the vehicle model (by year, by country), 
 ### Images (img folder)
 Holds design elements and the files uploaded by user that are then analysed by the AI
 ## Credits
-AI by [Carnet.ai](https://www.carnet.ai)
+AI by www.carnet.ai
 
 Charts rendering with [ChartJS](www.chartjs.org) library
 
