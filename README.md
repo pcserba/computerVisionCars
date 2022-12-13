@@ -1,22 +1,28 @@
 # computerVisionCars
 AI powered visualization of passenger cars data from European Environment Agency (EEA)
 ## Intro
-The aim is to be able to 'scan' cars in the street and give some basic info on them from data provided by EEA.
+Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. The figures might be slightly less detailed/reliable than the full dataset (mostly due to different namings of company/models in the 2 datasets), but the aim here is to play and experiment. Target audience: 7 year old boys.
+The user 'scans' cars in the street and get back some basic info (most notably: Co2 emissions) for similar cars from data provided by the dataset above.
 ## Building blocks
-### Main page
-Initial landing page + handling of user input (mobile: picture from the webcam; desktop: local file)
 ### Layout and style (card.css)
 Handles the display, colors, general styling etc...
-### Carnet AI (cURL.php)
-The online AI to be connected to (carnet.ai). It expects a picture and returns the cars make and model. 
-We save the file on a server and then pass-through the file to the AI
+### Main page
+Initial landing page + handling of user input (mobile: picture from the webcam; desktop: local file). The file is displayed on the canvas before being sent further.
 ### Webcam (webcam.js)
-Calls uploader+AI, and passes make and model parameters to  discodata
-### Rendering (updateUI.js)
-Renders the display with the data from carnetAI and updates the layout
-### Charts (chartjs-graphs.js/charts.min.js)
-Displays additional data as charts for the manufacturer or the vehicle model, using a local copy of chartjs.org
+Reads picture from the canvas, calls uploader+AI, and passes 'make' and 'model' parameters to discodata
+#### Carnet AI (cURL.php)
+The online AI to be connected to (carnet.ai). It expects a picture and returns the cars make and model. 
+We save the file on a server and then pass-through the file to the AI. A key from carnet.ai is needed to run the API (redacted in the file)
 ### Discodata (part of webcam.js)
 The EEA's data provider. Queries are written in plain SQL on https://discodata.eea.europa.eu/ then we export the generated URL (to be used in webcam.js) and replace the model/make parameters with the values coming from the AI
+## Rendering (updateUI.js)
+Renders the display with the data from carnetAI and updates the layout. Provides links to additional visualizations
+### Charts (chartjs-graphs.js/charts.min.js)
+Displays additional data as charts for the vehicle model (by year, by country), using a local copy of chartjs.org
 ### Images (img folder)
 Holds design elements and the files uploaded by user that are then analysed by the AI
+## Credits
+AI powered in the cloud by www.carnet.ai
+Charts rendering with www.chartjs.org library
+Data from www.eea.europa.eu
+Imagined and put together by Peter Cserba/2022 
