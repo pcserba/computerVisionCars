@@ -28,8 +28,8 @@ Holds design elements and the files uploaded by user that are then analysed by t
 ## Credits
 AI by [carnet.ai](https://carnet.ai)
 
-Charts rendering with [ChartJS](www.chartjs.org) library
+Charts rendering with [ChartJS](http://www.chartjs.org) library
 
-Data from [European Environment Agency](www.eea.europa.eu)
+Data from [European Environment Agency](http://www.eea.europa.eu)
 
 Imagined and put together by [Peter Cserba](https://www.darwah-group.com/)/2022 
