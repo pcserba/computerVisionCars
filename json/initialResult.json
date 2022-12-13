@@ -1,8 +1,0 @@
-const initialResult = '[{"Mh":"RENAULT","Cn_short":"CLIO","year":2020,"avgEWLTP":118.406000,"avgEc":1160.276000,"avgEp":69.612000,"avgM":1206.974000,"countVIN":260753}]';
-
-const resultByCountry = '[{"Mh":"BUGATTI","MS":"BE","Cn_short":"CHIRON","year":2020,"countVIN":1},{"Mh":"BUGATTI","MS":"DE","Cn_short":"CHIRON","year":2020,"countVIN":3},{"Mh":"BUGATTI","MS":"PT","Cn_short":"CHIRON","year":2020,"countVIN":1}]';
-
-const resultByYear =
-'[{"Mh":"RENAULT","Cn_short":"CLIO","year":2017,"countVIN":221459},{"Mh":"RENAULT","Cn_short":"CLIO","year":2018,"countVIN":361790},{"Mh":"RENAULT","Cn_short":"CLIO","year":2019,"countVIN":338561},{"Mh":"RENAULT","Cn_short":"CLIO","year":2020,"countVIN":260753}]';
-
-const resultByManufacturer = '[{"Mh":"RENAULT","year":2018,"avgEWLTP":131.899000,"countVIN":1247739},{"Mh":"RENAULT","year":2019,"avgEWLTP":136.095000,"countVIN":1269207},{"Mh":"RENAULT","year":2020,"avgEWLTP":116.080000,"countVIN":928591}]'
