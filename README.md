@@ -3,7 +3,7 @@ AI powered visualization of passenger cars data from European Environment Agency
 ## Intro
 Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. 
 
-The user 'scans' cars in the street and get back some basic info (most notably: Co2 emissions) for similar cars from the EEA dataset above.
+The user 'scans' cars in the street or screen and gets back some basic info (most notably: Co2 emissions) for similar cars from the EEA dataset above.
 
 Due to different namings of companies/models in the 2 components, the figures might be slightly less reliable than the full dataset, but the aim is to play and experiment. Target audience: 7 year old boys.
 
