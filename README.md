@@ -18,7 +18,7 @@ Reads picture from the canvas, calls uploader+AI, and passes 'make' and 'model' 
   The online AI to be connected to (carnet.ai). It expects a picture and returns the cars make and model. 
   We save the file on a server and then pass-through the file to the AI. A key from carnet.ai is needed to run the API (redacted in the github file)
   #### Discodata (part of webcam.js)
-  The EEA's data provider. Queries are written in plain SQL on (EEA Discodata)[https://discodata.eea.europa.eu/] then we export the generated URL (to be used in webcam.js) and replace    the model/make parameters with the values coming from the AI
+  The EEA's data provider. Queries are written in plain SQL on [EEA Discodata](https://discodata.eea.europa.eu/) then we export the generated URL (to be used in webcam.js) and replace    the model/make parameters with the values coming from the AI
 ### Rendering (updateUI.js)
 Renders the display with the data from carnetAI and updates the layout. Provides links to additional visualizations
 ### Charts (chartjs-graphs.js/charts.min.js)
