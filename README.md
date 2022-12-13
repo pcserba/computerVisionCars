@@ -1,7 +1,7 @@
 # computerVisionCars
 AI powered visualization of passenger cars data from European Environment Agency (EEA)
 ## Intro
-Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. The figures might be slightly less detailed/reliable than the full dataset (mostly due to different namings of company/models in the 2 datasets), but the aim is to play and experiment. Target audience: 7 year old boys.
+Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. The figures might be slightly less detailed/reliable than the full dataset (due to different namings of companies/models in the 2 components), but the aim is to play and experiment. Target audience: 7 year old boys.
 
 The user 'scans' cars in the street and get back some basic info (most notably: Co2 emissions) for similar cars from the EEA dataset above.
 ## Building blocks
