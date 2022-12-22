@@ -1,5 +1,7 @@
 # computerVisionCars
-AI powered visualization of passenger cars data from European Environment Agency (EEA). Working example [HERE](https://darwah-group.com/computerVision) (mobile device recommended)
+AI powered visualization of passenger cars data from European Environment Agency (EEA). 
+
+[Working example here](https://darwah-group.com/computerVision) (mobile device recommended)
 ## Intro
 Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. 
 
