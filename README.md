@@ -2,6 +2,7 @@
 AI powered visualization of passenger cars data from European Environment Agency (EEA). 
 
 [Working example here](https://darwah-group.com/computerVision) (mobile device recommended)
+
 [Alternate 'old school' version](https://darwah-group.com/GoCard) (mobile device recommended)
 
 ## Intro
