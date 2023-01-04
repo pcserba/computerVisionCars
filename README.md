@@ -3,7 +3,7 @@ AI powered visualization of passenger cars data from European Environment Agency
 
 [Working example here](https://darwah-group.com/computerVision) (mobile device recommended)
 
-[Alternate 'old school' version](https://darwah-group.com/GoCard) (mobile device recommended)
+[Kid friendly version](https://darwah-group.com/GoCard) (mobile device recommended)
 
 ## Intro
 Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. 
