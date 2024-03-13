@@ -1,9 +1,7 @@
 # computerVisionCars
 A Top Trumps card emulator aka: querying the cars data from European Environment Agency (EEA) with an AI trained to recognize cars. 
 
-[Working example here](https://darwah-group.com/computerVision) (mobile device recommended)
-
-[Kid friendly version](https://darwah-group.com/GoCard) (mobile device recommended)
+[Example](https://darwah-group.com/GoCard) (mobile device recommended)
 
 ## Intro
 Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. 
