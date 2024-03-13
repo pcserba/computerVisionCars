@@ -5,20 +5,32 @@ body, html {
   background: #101010;
 }
 body {
-  max-width: 1000px;
   margin: 0 auto;
 }
 .a, a:visited, a:link {
+color:#000000;
+}
+
+.b {
+text-align: center;
+font-size: x-large;
 color:#FFFFFF;
+}
+
+br {
+text-align: center;
+font-size: x-large;
+color:#FFFFFF;
+font-weight:bold;
 }
 
 #roundc3 {
     border-radius: 5px;
-    border: 2px solid #FFFFFF;
-    background: #101010;
+    border: 20px solid #FFFFFF;
+    background: #FFFFFF;
     padding: 0px; 
-    width: 99%;
-    height: 90%; 
+    width: 90%;
+    height: 100%; 
 }
 
 #loading {
@@ -32,19 +44,12 @@ color:#FFFFFF;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
 }
 
-#loading.show { 
-	transition:opacity 1s;
-	opacity: 0.8;
- } 
-
 #summary {
 	float: right;
 	position:fixed;
-   	padding-left:10px;
-	height: 50%;
-	width: 97%;
-	color:#FFFFFF;
- 	background-color: #000000;
+	width: 92%;
+	height: 100%;
+	color:#000000;
 	opacity: 0;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
 	z-index: 5;
@@ -52,23 +57,88 @@ color:#FFFFFF;
 
 #summary.show { 
 	transition:opacity 1s;
-	opacity: 0.8;
+	opacity: 1;
  }
 
 table {
 	table-layout: auto;
 	width: 100%;
+	border: solid 3px;
+	border-radius: 10px;
+        border-color: #ffa500;
+	border-spacing: 0px;
+}
+
+table.table1 {
+	position:relative;
+	table-layout: auto;
+	width: 100%;
+	border: solid 0px;
+	border-collapse: separate;
+	border-spacing: 20px;
+	vertical-align: middle;
+	font-size:x-large;
+}
+
+table.table1 tr {
+}
+
+table.table1 td {
+  border: solid 0px;
+  background-color: yellow;
+  border: solid 3px;
+  border-radius: 10px;
+  border-spacing:10px;
+  text-align:center;
+  font-weight:bolder;
+  border-color: #ffa500;
+  vertical-align: text-center;
+  font-size:large;
+}
+
+table.table2 {
+	position:relative;
+	table-layout: auto;
+	width: 100%;
+	background-color:rgba(0, 0, 0, 0);
+	border: solid 0px;
+	border-collapse: separate;
+	border-spacing: 20px;
+
+}
+table.table2 tr {
+	background-color:rgba(0, 0, 0, 0);
+}
+
+table.table2 td, tbody{
+	text-align:left;
+	background-color:rgba(0, 0, 0, 0);
+	vertical-align: text-top;
 }
 
 td {
+  border: solid 0px;
   overflow: hidden;
   text-align:left;
+  color:#000000;
+
 }
 
 td:nth-child(2) {
  text-align: right;
  padding-right:10px;
  }
+
+tr {
+  border: solid 0px;
+  background-color: yellow;
+}
+
+tr:nth-child(odd) {
+  background-color: orange;
+}
+
+
 
 .BL {
    position: absolute;
