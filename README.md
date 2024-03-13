@@ -8,7 +8,7 @@ AI powered visualization of passenger cars data from European Environment Agency
 ## Intro
 Provide a playful access point to data available on http://co2cars.apps.eea.europa.eu/ to the general public. 
 
-The user 'scans' cars in the street or screen and gets back some basic info (most notably: Co2 emissions) for similar cars from the EEA dataset above.
+The user 'scans' cars in the street or screen and gets back some basic info for similar cars from the EEA dataset above.
 
 Due to different namings of companies/models in the 2 components, the figures might be slightly less reliable than the full dataset, but the aim is to play and experiment. Target audience: 7 year old boys.
 
@@ -26,14 +26,10 @@ Reads picture from the canvas, calls uploader+AI, and passes 'make' and 'model' 
   The EEA's data provider. Queries are written in plain SQL on [EEA Discodata](https://discodata.eea.europa.eu/) then we export the generated URL (to be used in webcam.js) and replace    the model/make parameters with the values coming from the AI
 ### Rendering (updateUI.js)
 Renders the display with the data from carnetAI and updates the layout. Provides links to additional visualizations
-### Charts (chartjs-graphs.js/charts.min.js)
-Displays additional data as charts for the vehicle model (by year, by country), using a local copy of chartjs.org
 ### Images (img folder)
 Holds design elements and the files uploaded by user that are then analysed by the AI
 ## Credits
 AI by [carnet.ai](https://carnet.ai)
-
-Charts rendering with [ChartJS](http://www.chartjs.org) library
 
 Data from [European Environment Agency](http://www.eea.europa.eu)
 
